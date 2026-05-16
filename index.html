@@ -7,52 +7,108 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #0d0d0d;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     color: white;
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.header {
-    padding: 30px;
-}
-
-.logo {
-    width: 150px;
+/* CARD CENTRAL */
+.container {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 40px 30px;
     border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
 }
 
-.player {
-    margin-top: 20px;
+/* LOGO */
+.logo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
 }
 
+/* TITULO */
+h1 {
+    margin: 10px 0 5px;
+    font-size: 22px;
+}
+
+/* SUBTITULO */
+.tagline {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* PLAYER */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* INFO */
 .info {
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* STATUS AO VIVO */
+.live {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #00ff88;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <img class="logo" src="aradio-logo-circle.png" />
-    <h1>📡 aRADIO - web</h1>
-    <p>" IN UNDERGROUND WE TRUST "</p>
-</div>
+<div class="container">
 
-<div class="player">
+    <!-- LOGO -->
+    <img class="logo" src="aradio-logo-circle.png" alt="aRADIO logo">
+
+    <!-- TÍTULO -->
+    <h1>📡 aRADIO WEB</h1>
+    <div class="tagline">" IN UNDERGROUND WE TRUST "</div>
+
+    <!-- STATUS AO VIVO -->
+    <div class="live">🔴 AO VIVO</div>
+
+    <!-- PLAYER -->
     <audio controls autoplay>
         <source src="https://shuttle-evans-components-procedure.trycloudflare.com/radio" type="audio/mpeg">
         Seu navegador não suporta áudio.
     </audio>
-</div>
 
-<div class="info">
-    <p> • Ao vivo agora</p>
-    <p>📞 Contato: contato.aradiofm@gmail.com</p>
-    <p>🌐 Instagram: @aradio.web</p>
+    <!-- INFO -->
+    <div class="info">
+        📡 Transmissão ao vivo<br>
+        📞 contato.aradiofm@gmail.com<br>
+        🌐 Instagram: @aradio.web
+    </div>
+
 </div>
 
 </body>
