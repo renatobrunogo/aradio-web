@@ -2,6 +2,10 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+
+<!-- IMPORTANTE: responsividade no celular -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>aRADIO WEB</title>
 
 <style>
@@ -21,7 +25,11 @@ body {
     background: rgba(255, 255, 255, 0.06);
     padding: 40px 30px;
     border-radius: 20px;
-    width: 320px;
+
+    /* 🔥 RESPONSIVO AQUI */
+    width: 90%;
+    max-width: 380px;
+
     text-align: center;
     box-shadow: 0 0 25px rgba(0,0,0,0.6);
     backdrop-filter: blur(8px);
@@ -35,6 +43,10 @@ body {
     border-radius: 50%;
     margin-bottom: 15px;
     box-shadow: 0 0 15px rgba(255,255,255,0.1);
+
+    /* 🔥 RESPONSIVO */
+    max-width: 40vw;
+    height: auto;
 }
 
 /* TITULO */
@@ -78,6 +90,30 @@ audio {
     0% { opacity: 1; }
     50% { opacity: 0.4; }
     100% { opacity: 1; }
+}
+
+/* 📱 AJUSTES EXTRAS PARA CELULAR */
+@media (max-width: 480px) {
+
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .tagline {
+        font-size: 11px;
+    }
+
+    .info {
+        font-size: 11px;
+    }
+
+    .live {
+        font-size: 10px;
+    }
 }
 </style>
 </head>
