@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- IMPORTANTE: responsividade no celular -->
+<!-- responsiv. -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>aRADIO WEB</title>
@@ -20,7 +20,6 @@ body {
     align-items: center;
 }
 
-/* CARD CENTRAL */
 .container {
     background: rgba(255, 255, 255, 0.06);
     padding: 40px 30px;
@@ -35,7 +34,6 @@ body {
     backdrop-filter: blur(8px);
 }
 
-/* LOGO */
 .logo {
     width: 120px;
     height: 120px;
@@ -44,18 +42,16 @@ body {
     margin-bottom: 15px;
     box-shadow: 0 0 15px rgba(255,255,255,0.1);
 
-    /* 🔥 RESPONSIVO */
+    /*responsiv. */
     max-width: 40vw;
     height: auto;
 }
 
-/* TITULO */
 h1 {
     margin: 10px 0 5px;
     font-size: 22px;
 }
 
-/* SUBTITULO */
 .tagline {
     font-size: 12px;
     opacity: 0.7;
@@ -63,13 +59,11 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* PLAYER */
 audio {
     width: 100%;
     margin-top: 10px;
 }
 
-/* INFO */
 .info {
     margin-top: 20px;
     font-size: 12px;
@@ -77,7 +71,6 @@ audio {
     line-height: 1.6;
 }
 
-/* STATUS AO VIVO */
 .live {
     display: inline-block;
     margin-top: 10px;
@@ -92,7 +85,7 @@ audio {
     100% { opacity: 1; }
 }
 
-/* 📱 AJUSTES EXTRAS PARA CELULAR */
+/* params adicionais para phone */
 @media (max-width: 480px) {
 
     .container {
@@ -122,25 +115,20 @@ audio {
 
 <div class="container">
 
-    <!-- LOGO -->
     <img class="logo" src="aradio-logo-circle.png" alt="aRADIO logo">
 
-    <!-- TÍTULO -->
     <h1>📡 aRADIO WEB</h1>
     <div class="tagline">" IN UNDERGROUND WE TRUST "</div>
 
-    <!-- STATUS AO VIVO -->
     <div class="live">🔴 AO VIVO</div>
 
-    <!-- PLAYER -->
     <audio controls autoplay>
         <source src="https://fountain-easily-condos-harbour.trycloudflare.com/radio" type="audio/mpeg">
         Seu navegador não suporta áudio.
     </audio>
 
-    <!-- INFO -->
     <div class="info">
-        📡 Transmissão ao vivo<br>
+        ⚠️ PROJETO EM TESTE!<br>
         📞 contato.aradiofm@gmail.com<br>
         🌐 Instagram: @aradio.web
     </div>
