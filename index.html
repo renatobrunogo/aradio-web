@@ -9,6 +9,7 @@
 <title>aRADIO</title>
 
 <style>
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -42,7 +43,7 @@ body {
     margin-bottom: 15px;
     box-shadow: 0 0 15px rgba(255,255,255,0.1);
 
-    /*responsiv. */
+    /* responsiv. */
     max-width: 40vw;
     height: auto;
 }
@@ -75,7 +76,6 @@ audio {
     display: inline-block;
     margin-top: 10px;
     font-size: 11px;
-    color: #00ff88;
     animation: pulse 1.5s infinite;
 }
 
@@ -108,6 +108,7 @@ audio {
         font-size: 10px;
     }
 }
+
 </style>
 </head>
 
@@ -117,10 +118,13 @@ audio {
 
     <img class="logo" src="aradio-logo-circle.png" alt="aRADIO logo">
 
-    <h1>📡 aRADIO</h1>
-    <div class="tagline">" IN UNDERGROUND WE TRUST "</div>
+    <h1>(   (  ( aRADIO )  )   )</h1>
 
-    <div class="live">🔴 AO VIVO</div>
+    <div class="tagline">
+        "IN UNDERGROUND WE TRUST"
+    </div>
+
+    <div class="live" id="statusRadio"></div>
 
     <audio controls autoplay>
         <source src="https://fountain-easily-condos-harbour.trycloudflare.com/radio" type="audio/mpeg">
@@ -128,12 +132,33 @@ audio {
     </audio>
 
     <div class="info">
-        ⚠️ PROJETO EM TESTE!<br>
+        💡 EM FASE DE TESTES!<br>
         📞 contato.aradiofm@gmail.com<br>
         🌐 Instagram: @aradio.web
     </div>
 
 </div>
+
+<!-- STATUS DA RÁDIO -->
+<script>
+
+    const radioOnline = true;
+
+    const status = document.getElementById("statusRadio");
+
+    if (radioOnline) {
+
+        status.innerHTML = "🔴 AO VIVO";
+        status.style.color = "#00ff88";
+
+    } else {
+
+        status.innerHTML = "⚠️ EM MANUTENÇÃO";
+        status.style.color = "#ff3b3b";
+
+    }
+
+</script>
 
 </body>
 </html>
