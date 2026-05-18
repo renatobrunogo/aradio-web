@@ -15,24 +15,24 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.06);
     padding: 40px 30px;
-    border-radius: 20px;
-
-    /* responsiv. */
+    border-radius: 22px;
     width: 90%;
     max-width: 380px;
-
     text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
-    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo {
@@ -40,43 +40,44 @@ body {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
-
-    /* responsiv. */
+    margin-bottom: 18px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.12);
     max-width: 40vw;
-    height: auto;
 }
 
 h1 {
     margin: 10px 0 5px;
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .tagline {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 20px;
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 22px;
     letter-spacing: 1px;
 }
 
 audio {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
 }
 
 .info {
-    margin-top: 20px;
+    margin-top: 24px;
     font-size: 12px;
-    opacity: 0.75;
-    line-height: 1.6;
+    opacity: 0.78;
+    line-height: 1.8;
 }
 
 .live {
     display: inline-block;
     margin-top: 10px;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: bold;
     animation: pulse 1.5s infinite;
+    letter-spacing: 1px;
 }
 
 @keyframes pulse {
@@ -85,7 +86,31 @@ audio {
     100% { opacity: 1; }
 }
 
-/* params adicionais para phone */
+/* bloco manut. */
+.maintenance-box {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255, 59, 59, 0.12);
+    border: 1px solid rgba(255, 59, 59, 0.35);
+    display: none;
+}
+
+.maintenance-title {
+    color: #ff5c5c;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.maintenance-text {
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* disposit. mobile */
 @media (max-width: 480px) {
 
     .container {
@@ -93,7 +118,7 @@ audio {
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .tagline {
@@ -105,7 +130,15 @@ audio {
     }
 
     .live {
-        font-size: 10px;
+        font-size: 11px;
+    }
+
+    .maintenance-title {
+        font-size: 13px;
+    }
+
+    .maintenance-text {
+        font-size: 11px;
     }
 }
 
@@ -126,35 +159,58 @@ audio {
 
     <div class="live" id="statusRadio"></div>
 
-    <audio controls autoplay>
-        <source src="https://tables-women-guarantees-heat.trycloudflare.com/radio" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-    </audio>
+    <div id="playerContainer">
+        <audio controls autoplay>
+            <source src="https://tables-women-guarantees-heat.trycloudflare.com/radio" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+    </div>
+
+    <div class="maintenance-box" id="maintenanceBox">
+
+        <div class="maintenance-title">
+            ⚠️ SISTEMA EM MANUTENÇÃO
+        </div>
+
+        <div class="maintenance-text">
+            Não se preocupe!<br>
+            Em breve retomamos a programação.
+        </div>
+
+    </div>
 
     <div class="info">
-        ⚙️ Em desenvolvimento...<br>
-        ✉️ contato.aradiofm@gmail.com<br>
+        ⚙️ Estamos em fase de testes...<br>
+        📞 contato.aradiofm@gmail.com<br>
         🌐 Instagram: @aradio.web
     </div>
 
 </div>
 
-<!-- STATUS DA RÁDIO -->
+<!-- status on/off -->
 <script>
 
     const radioOnline = true;
 
     const status = document.getElementById("statusRadio");
+    const player = document.getElementById("playerContainer");
+    const maintenance = document.getElementById("maintenanceBox");
 
     if (radioOnline) {
 
         status.innerHTML = "🔴 AO VIVO";
         status.style.color = "#00ff88";
 
+        player.style.display = "block";
+        maintenance.style.display = "none";
+
     } else {
 
-        status.innerHTML = "⚠️ SISTEMA EM MANUTENÇÃO";
-        status.style.color = "#ff3b3b";
+        status.innerHTML = "⚠️ OFFLINE";
+        status.style.color = "#ff5c5c";
+
+        player.style.display = "none";
+        maintenance.style.display = "block";
 
     }
 
